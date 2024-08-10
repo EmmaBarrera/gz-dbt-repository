@@ -17,12 +17,15 @@ sources:
       - name: sales
         identifier: raw_gz_sales
         description: "Sales data table"
-        columns:
-          - name: sales_pk
-            description: "PK of the table"
-            tests:
-              - unique
-              - not_null
+        freshness: 
+          warn_after:
+            count: 90
+            period: day
+        loaded_at_field: "CAST(date_date AS TIMESTAMP)"
+        
+        tests:
+          - unique:
+              column_name: "(orders_id || '_' || pdt_id)"
       - name: ship
         identifier: raw_gz_ship
         description: 	"Shipping data table"
@@ -32,3 +35,4 @@ sources:
             tests:
               - unique
               - not_null
+
