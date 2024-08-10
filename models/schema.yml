@@ -1,7 +1,9 @@
 version: 2
 
 sources:
-  - name: gw_raw_data
+  - name: raw
+    schema: gw_raw_data
+    description: "GW raw data source"
     tables:
       - name: product
         identifier: raw_gz_product

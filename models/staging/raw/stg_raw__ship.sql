@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('gw_raw_data', 'ship') }}
+    select * from {{ source('raw', 'ship') }}
 
 ),
 

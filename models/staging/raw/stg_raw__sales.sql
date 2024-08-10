@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('gw_raw_data', 'sales') }}
+    select * from {{ source('raw', 'sales') }}
 
 ),
 
@@ -11,7 +11,7 @@ renamed as (
     select
         date_date,
         orders_id,
-        pdt_id AS product_id, 
+        pdt_id AS product_id,
         revenue,
         quantity
 
