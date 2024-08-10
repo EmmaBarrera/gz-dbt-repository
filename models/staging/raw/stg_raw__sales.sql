@@ -13,7 +13,8 @@ renamed as (
         orders_id,
         pdt_id AS product_id,
         revenue,
-        quantity
+        quantity,
+        orders_id || '_' || product_id AS sale_pk -- Creation of PK from this table 
 
     from source
 

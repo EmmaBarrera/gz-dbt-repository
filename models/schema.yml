@@ -8,9 +8,27 @@ sources:
       - name: product
         identifier: raw_gz_product
         description: "Products data table"
+        columns:
+          - name: products_id
+            description: "PK of the table"
+            tests:
+              - unique
+              - not_null
       - name: sales
         identifier: raw_gz_sales
         description: "Sales data table"
+        columns:
+          - name: sale_pk
+            description: "PK of the table"
+            tests:
+              - unique
+              - not_null
       - name: ship
         identifier: raw_gz_ship
         description: 	"Shipping data table"
+        columns:
+          - name: orders_id
+            description: "PK of the table"
+            tests:
+              - unique
+              - not_null
