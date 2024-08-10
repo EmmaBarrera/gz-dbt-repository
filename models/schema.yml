@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raw
+    identifier: gw_raw_data
+    tables:
+      - name: product
+        identifier: raw_gz_product
+        description: "Products data table"
+      - name: sales
+        identifier: raw_gz_sales
+        description: "Sales data table"
+      - name: ship
+        description: 	"Shipping data table"
