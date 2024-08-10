@@ -11,4 +11,5 @@ sources:
         identifier: raw_gz_sales
         description: "Sales data table"
       - name: ship
+        identifier: raw_gz_ship
         description: 	"Shipping data table"
