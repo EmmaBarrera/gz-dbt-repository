@@ -18,7 +18,7 @@ sources:
         identifier: raw_gz_sales
         description: "Sales data table"
         columns:
-          - name: sale_pk
+          - name: sales_pk
             description: "PK of the table"
             tests:
               - unique

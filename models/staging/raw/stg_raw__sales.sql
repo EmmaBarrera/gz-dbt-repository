@@ -14,10 +14,11 @@ renamed as (
         pdt_id AS product_id,
         revenue,
         quantity,
-        orders_id || '_' || product_id AS sale_pk -- Creation of PK from this table 
+        orders_id || '_' || pdt_id AS sales_pk
 
     from source
 
 )
 
 select * from renamed
+
