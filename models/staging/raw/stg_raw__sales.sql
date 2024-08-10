@@ -2,7 +2,13 @@ with
 
 source as (
 
-    select * from {{ source('raw', 'sales') }}
+    select 
+        date_date,
+        orders_id,
+        pdt_id,
+        revenue,
+        quantity,
+    from {{ source('raw', 'sales') }}
 
 ),
 
