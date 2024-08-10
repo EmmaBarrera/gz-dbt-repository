@@ -1,0 +1,9 @@
+SELECT
+    orders_id
+    ,revenue
+    ,date_date
+    ,quantity
+    ,purchase_cost
+    ,margin
+FROM
+    {{ref('int_sales_margin')}}
