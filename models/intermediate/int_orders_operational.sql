@@ -1,6 +1,7 @@
 WITH orders_margin AS (
     SELECT
-        orders_id
+        date_date
+        ,orders_id
         ,margin
         ,revenue
         ,quantity
@@ -21,6 +22,7 @@ shipping_data AS (
 
 SELECT
     om.orders_id
+    ,om.date_date
     ,om.margin
     ,om.revenue
     ,om.quantity
