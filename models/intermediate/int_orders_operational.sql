@@ -34,4 +34,6 @@ FROM
 LEFT JOIN
     shipping_data sd
     ON om.orders_id = sd.orders_id
+GROUP BY
+    om.orders_id
 
