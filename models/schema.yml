@@ -5,6 +5,7 @@ sources:
     schema: gw_raw_data
     description: "GW raw data source"
     tables:
+# PRODUCTS TABLE
       - name: product
         identifier: raw_gz_product
         description: "Products data table"
@@ -14,6 +15,7 @@ sources:
             tests:
               - unique
               - not_null
+# SALES TABLE
       - name: sales
         identifier: raw_gz_sales
         description: "Sales data table"
@@ -22,10 +24,11 @@ sources:
             count: 90
             period: day
         loaded_at_field: "CAST(date_date AS TIMESTAMP)"
-        
         tests:
           - unique:
               column_name: "(orders_id || '_' || pdt_id)"
+      
+# SHIPPING TABLE
       - name: ship
         identifier: raw_gz_ship
         description: 	"Shipping data table"
@@ -36,3 +39,36 @@ sources:
               - unique
               - not_null
 
+# CAMPAIGNS TABLES
+
+# ADWORDS
+      - name: adwords
+        identifier: raw_gz_adwords
+        description: "Adwords campaigns table"
+        tests:
+            - unique:
+                column_name: "(date_date || '_' || campaign_key)"
+
+# BING
+      - name: bing
+        identifier: raw_gz_bing
+        description: "Bing campaigns table"
+        tests:
+            - unique:
+                column_name: "(date_date || '_' || campaign_key)"
+
+# CRITEO
+      - name: criteo
+        identifier: gz_criteo
+        description: "Criteo campaigns table"
+        tests:
+            - unique:
+                column_name: "(date_date || '_' || campaign_key)"
+
+# FACEBOOK
+      - name: facebook
+        identifier: raw_gz_facebook
+        description: "Facebook campaigns table"
+        tests:
+            - unique:
+                column_name: "(date_date || '_' || campaign_key)"
