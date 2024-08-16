@@ -30,10 +30,12 @@ SELECT
     ,sd.shipping_fee
     ,sd.logcost
     ,sd.ship_cost
-    ,ROUND(om.margin + sd.shipping_fee - sd.logcost - sd.ship_cost,2) AS operational_margin
+    ,ROUND(om.margin + sd.shipping_fee - (sd.logcost + sd.ship_cost),2) AS operational_margin
 FROM
     orders_margin om
 LEFT JOIN
     shipping_data sd
     ON om.orders_id = sd.orders_id
+ORDER BY
+    operational_margin
 
